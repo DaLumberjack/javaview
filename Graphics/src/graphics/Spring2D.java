@@ -19,7 +19,7 @@ public class Spring2D implements Drawable2D {
 	protected DoublePoint2 position2;
 	protected double width;
 	
-	protected int vertices;
+	protected final int vertices;
 	protected Color color;
 	protected int displayList;
 	
