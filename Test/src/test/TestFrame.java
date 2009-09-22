@@ -1,4 +1,9 @@
-package graphics;
+package test;
+
+import graphics.Camera2D;
+import graphics.Display;
+import graphics.OffsetSpring2D;
+import graphics.Scene2D;
 
 import java.awt.BorderLayout;
 
