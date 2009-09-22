@@ -44,6 +44,12 @@ public class Point2D implements Drawable2D {
 	public void display(GLAutoDrawable drawable) {
 		GL gl = drawable.getGL();
 		
+		gl.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
+		gl.glEnable(GL.GL_BLEND);
+		gl.glEnable(GL.GL_LINE_SMOOTH);
+		gl.glEnable(GL.GL_POINT_SMOOTH);
+		gl.glPointSize(5);
+		
 		gl.glMatrixMode(GL.GL_MODELVIEW);
 		
 		gl.glPushMatrix();

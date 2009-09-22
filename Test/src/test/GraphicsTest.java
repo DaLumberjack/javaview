@@ -45,17 +45,12 @@ public class GraphicsTest extends JFrame {
 	}
 	
 	
-	public Display getDisplay() {
-		return display;
-	}
-	
-	
 	
 	
 	public static void main(String[] args) throws InterruptedException {
 		GraphicsTest frame = new GraphicsTest();
 		
-		Animator animator = new Animator(frame.getDisplay());
+		Animator animator = new Animator(frame.display);
 		animator.start();
 		
 		DoubleVector2 lenght = new DoubleVector2(0d, -300);
