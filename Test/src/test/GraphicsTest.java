@@ -15,7 +15,7 @@ import math.DoubleVector2;
 import com.sun.opengl.util.Animator;
 
 
-public class TestFrame extends JFrame {
+public class GraphicsTest extends JFrame {
 	
 	private static final long serialVersionUID = -4196781443943967588L;
 	
@@ -26,7 +26,7 @@ public class TestFrame extends JFrame {
 	private final OffsetSpring2D spring;
 	
 	
-	public TestFrame() {
+	public GraphicsTest() {
 		super("Test");
 		setLayout(new BorderLayout());
 		
@@ -53,7 +53,7 @@ public class TestFrame extends JFrame {
 	
 	
 	public static void main(String[] args) throws InterruptedException {
-		TestFrame frame = new TestFrame();
+		GraphicsTest frame = new GraphicsTest();
 		
 		Animator animator = new Animator(frame.getDisplay());
 		animator.start();
