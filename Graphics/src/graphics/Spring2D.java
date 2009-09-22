@@ -86,11 +86,6 @@ public class Spring2D implements Drawable2D {
 				gl.glEnd();
 			gl.glEndList();
 		}
-		
-		// TODO entfernen
-		gl.glBlendFunc(GL.GL_SRC_ALPHA,GL.GL_ONE_MINUS_SRC_ALPHA);
-		gl.glEnable(GL.GL_BLEND);
-		gl.glEnable(GL.GL_LINE_SMOOTH);
 	}
 	public void display(GLAutoDrawable drawable) {
 		GL gl = drawable.getGL();

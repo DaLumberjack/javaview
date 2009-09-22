@@ -41,6 +41,8 @@ public abstract class Collision<T1 extends Collideable, T2 extends Collideable> 
 	public void update() {
 		CollisionEvent event = detectCollision();
 		
+		if (event.getCount() == 0) return;
+		
 		for (CollisionListener listener : collisionListeners) {
 			listener.collisionDetected(event);
 		}

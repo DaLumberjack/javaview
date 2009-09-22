@@ -21,9 +21,11 @@ public class Line2Point extends Collision<Line, Point> {
 		LinkedList<DoublePoint2> points = new LinkedList<DoublePoint2>();
 		
 		DoubleVector2 distance = new DoubleVector2(line1, line2);
-		double lambda = (point.x - line1.x) / distance.x;
+		double lambdaX = (point.x - line1.x) / distance.x;
+		double lambdaY = (point.y - line1.y) / distance.y;
 		
-		if ((lambda >= 0) & (lambda <= 1d)) points.add(point);
+		if (lambdaX == lambdaY)
+			if ((lambdaX >= 0) & (lambdaX <= 1d)) points.add(point);
 		
 		return new CollisionEvent(this, points, points.size());
 	}
