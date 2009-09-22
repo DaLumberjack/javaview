@@ -26,6 +26,9 @@ public class Line2Line extends Collision<Line, Line> {
 		DoubleVector2 distance12 = new DoubleVector2(line11, line21);
 		
 		double determinant = distance2.x * distance1.y - distance1.x * distance2.y;
+		
+		if (determinant == 0d) return new CollisionEvent(this, null, Float.POSITIVE_INFINITY);
+		
 		double lambda = (distance2.x * distance12.y - distance12.x * distance2.y) / determinant;
 		double my = (distance1.x * distance12.y - distance12.x * distance1.y) / determinant;
 		
