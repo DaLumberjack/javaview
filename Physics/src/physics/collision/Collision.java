@@ -3,15 +3,15 @@ package physics.collision;
 import java.util.LinkedList;
 
 
-public abstract class Collision {
+public abstract class Collision<T1 extends Collideable, T2 extends Collideable> {
 	
-	protected final Collideable collideable1;
-	protected final Collideable collideable2;
+	protected final T1 collideable1;
+	protected final T2 collideable2;
 	
 	private final LinkedList<CollisionListener> collisionListeners;
 	
 	
-	public Collision(Collideable collideable1, Collideable collideable2) {
+	public Collision(T1 collideable1, T2 collideable2) {
 		this.collideable1 = collideable1;
 		this.collideable2 = collideable2;
 		
@@ -19,10 +19,10 @@ public abstract class Collision {
 	}
 	
 	
-	public Collideable getCollideable1() {
+	public T1 getCollideable1() {
 		return collideable1;
 	}
-	public Collideable getCollideable2() {
+	public T2 getCollideable2() {
 		return collideable2;
 	}
 	
