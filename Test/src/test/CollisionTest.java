@@ -67,7 +67,9 @@ public class CollisionTest extends JFrame {
 		lineCollision = new Line2Line(line1, line2);
 		lineCollision.addColisionListener(new CollisionListener() {
 			public void collisionDetected(CollisionEvent event) {
-				//System.out.println("line-line collision @" + event.getPoints().get(0));
+				System.out.println("line-line collision with " + event.getCount() + " contacts");
+				
+				if (event.getCount() == Float.POSITIVE_INFINITY) return;
 				
 				point2D1.setPosition(event.getPoints().get(0));
 			}
