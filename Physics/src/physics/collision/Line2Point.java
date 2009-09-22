@@ -23,7 +23,7 @@ public class Line2Point extends Collision<Line, Point> {
 		DoubleVector2 distance = new DoubleVector2(line1, line2);
 		double lambda = (point.x - line1.x) / distance.x;
 		
-		if (lambda <= distance.norm()) points.add(point);
+		if ((lambda >= 0) & (lambda <= 1d)) points.add(point);
 		
 		return new CollisionEvent(this, points, points.size());
 	}
