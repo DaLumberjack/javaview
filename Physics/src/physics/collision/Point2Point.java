@@ -7,9 +7,4 @@ public class Point2Point extends Collision {
 		super(point1, point2);
 	}
 	
-	
-	public void update() {
-		
-	}
-	
 }

@@ -35,4 +35,15 @@ public abstract class Collision {
 		return collisionListeners.remove(collisionListener);
 	}
 	
+	
+	public abstract CollisionEvent detectCollision();
+	
+	public void update() {
+		CollisionEvent event = detectCollision();
+		
+		for (CollisionListener listener : collisionListeners) {
+			listener.collisionDetected(event);
+		}
+	}
+	
 }
