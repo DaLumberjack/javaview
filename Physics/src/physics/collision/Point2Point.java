@@ -13,8 +13,8 @@ public class Point2Point extends Collision<Point, Point> {
 	
 	
 	public CollisionEvent detectCollision() {
-		DoublePoint2 point1 = collideable1.position;
-		DoublePoint2 point2 = collideable2.position;
+		DoublePoint2 point1 = collideableA.getPosition();
+		DoublePoint2 point2 = collideableB.getPosition();
 		
 		LinkedList<DoublePoint2> points = new LinkedList<DoublePoint2>();
 		

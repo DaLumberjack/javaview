@@ -14,14 +14,14 @@ public class Circle2Line extends Collision<Circle, Line> {
 	
 	
 	public CollisionEvent detectCollision() {
-		DoublePoint2 circle = collideable1.position;
-		DoublePoint2 line1 = collideable2.position1;
-		DoublePoint2 line2 = collideable2.position2;
+		DoublePoint2 circle = collideableA.getPosition();
+		DoublePoint2 line1 = collideableB.getPositionA();
+		DoublePoint2 line2 = collideableB.getPositionB();
 		
 		LinkedList<DoublePoint2> points = new LinkedList<DoublePoint2>();
 		
 		DoubleVector2 distance = new DoubleVector2(line1, line2);
-		double radius = collideable1.radius;
+		double radius = collideableA.radius;
 		
 		DoubleVector2 vcircle = new DoubleVector2(circle);
 		DoubleVector2 vline1 = new DoubleVector2(line1);
@@ -34,9 +34,16 @@ public class Circle2Line extends Collision<Circle, Line> {
 		double qb = Math.sqrt(b * b - 4 * a * c);
 		double qc = 2 * a;
 		
-		if ((qc != 0d) & (qb != Double.NaN)) {
-			points.add(line1.add(distance.scalarMultiply((qa + qb) / qc)));
-			if (qb != 0d) points.add(line1.add(distance.scalarMultiply((qa - qb) / qc)));
+		if (!Double.isNaN(qb) && (qc != 0d)) {
+			double lambda = (qa + qb) / qc;
+			
+			System.out.println(lambda);
+			System.out.println(line1.add(distance.scalarMultiply(lambda)));
+			
+			if ((lambda >= 0) && (lambda <= 1)) points.add(line1.add(distance.scalarMultiply(lambda)));
+			
+			lambda = (qa - qb) / qc;
+			if ((lambda >= 0) && (lambda <= 1) && (qb != 0d)) points.add(line1.add(distance.scalarMultiply(lambda)));
 		}
 		
 		return new CollisionEvent(this, points, points.size());

@@ -38,7 +38,7 @@ public class GraphicsTest extends JFrame {
 		
 		spring = new OffsetSpring2D(new DoublePoint2(0, 200), new DoublePoint2(0, -200), 20, 50, 10);
 		scene.add(spring);
-		circle = new Circle2D(new DoublePoint2(0, 0), 200, 1000);
+		circle = new Circle2D(new DoublePoint2(0, 0), 200, 1000000);
 		scene.add(circle);
 		
 		add(display);

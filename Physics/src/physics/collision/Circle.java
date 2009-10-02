@@ -5,26 +5,23 @@ import math.DoublePoint2;
 
 public class Circle implements Collideable {
 	
-	protected DoublePoint2 position;
+	protected Position position;
 	protected double radius;
 	
 	
-	public Circle(DoublePoint2 position, double radius) {
+	public Circle(Position position, double radius) {
 		this.position = position;
 		this.radius = radius;
 	}
 	
 	
 	public DoublePoint2 getPosition() {
-		return position;
+		return position.getPosition();
 	}
 	public double getRadius() {
 		return radius;
 	}
 	
-	public void setPosition(DoublePoint2 position) {
-		this.position = position;
-	}
 	public void setRadius(double radius) {
 		this.radius = radius;
 	}

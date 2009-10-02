@@ -14,13 +14,13 @@ public class Circle2Point extends Collision<Circle, Point> {
 	
 	
 	public CollisionEvent detectCollision() {
-		DoublePoint2 circle = collideable1.position;
-		DoublePoint2 point = collideable2.position;
+		DoublePoint2 circle = collideableA.getPosition();
+		DoublePoint2 point = collideableB.getPosition();
 		
 		LinkedList<DoublePoint2> points = new LinkedList<DoublePoint2>();
 		
 		DoubleVector2 distance = new DoubleVector2(circle, point);
-		double radius = collideable1.radius;
+		double radius = collideableA.radius;
 		
 		if ((radius * radius) == distance.scalarProduct(distance)) points.add(point);
 		
