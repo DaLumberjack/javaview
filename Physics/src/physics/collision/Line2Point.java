@@ -14,9 +14,9 @@ public class Line2Point extends Collision<Line, Point> {
 	
 	
 	public CollisionEvent detectCollision() {
-		DoublePoint2 line1 = collideable1.position1;
-		DoublePoint2 line2 = collideable1.position2;
-		DoublePoint2 point = collideable2.position;
+		DoublePoint2 line1 = collideableA.getPositionA();
+		DoublePoint2 line2 = collideableA.getPositionB();
+		DoublePoint2 point = collideableB.getPosition();
 		
 		LinkedList<DoublePoint2> points = new LinkedList<DoublePoint2>();
 		

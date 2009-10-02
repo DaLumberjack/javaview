@@ -5,25 +5,25 @@ import java.util.LinkedList;
 
 public abstract class Collision<T1 extends Collideable, T2 extends Collideable> {
 	
-	protected final T1 collideable1;
-	protected final T2 collideable2;
+	protected final T1 collideableA;
+	protected final T2 collideableB;
 	
 	private final LinkedList<CollisionListener> collisionListeners;
 	
 	
 	public Collision(T1 collideable1, T2 collideable2) {
-		this.collideable1 = collideable1;
-		this.collideable2 = collideable2;
+		this.collideableA = collideable1;
+		this.collideableB = collideable2;
 		
 		collisionListeners = new LinkedList<CollisionListener>();
 	}
 	
 	
 	public T1 getCollideable1() {
-		return collideable1;
+		return collideableA;
 	}
 	public T2 getCollideable2() {
-		return collideable2;
+		return collideableB;
 	}
 	
 	
